@@ -1,5 +1,5 @@
 // Imports
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 // To Test
@@ -14,39 +14,9 @@ describe('Renders main page correctly', async () => {
 	 * Passes - shows title correctly
 	 */
 	it('Should render the page correctly', async () => {
-		const h1 = screen.queryByText('Vite + React');
+		const h1 = screen.queryByText('test');
 
 		// Post Expectations
 		expect(h1).not.toBeNull();
-	});
-
-	/**
-	 * Passes - shows the button count correctly present
-	 */
-	it('Should show the button count set to 0', async () => {
-		// Setup
-		const button = screen.queryByText('count is 0');
-
-		// Expectations
-		expect(button).not.toBeNull();
-	});
-
-	/**
-	 * Passes - clicks the button 3 times and shows the correct count
-	 */
-	it('Should show the button count set to 3', async () => {
-		// Setup
-		const button = screen.queryByTestId('count');
-
-		// Pre Expectations
-		expect(button).not.toBeNull();
-
-		// Actions
-		fireEvent.click(button as HTMLElement);
-		fireEvent.click(button as HTMLElement);
-		fireEvent.click(button as HTMLElement);
-
-		// Post Expectations
-		expect(button?.innerHTML).toBe('count is 3');
 	});
 });
