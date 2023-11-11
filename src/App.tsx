@@ -1,7 +1,7 @@
 import './App.scss';
 
 const App = (): JSX.Element => {
-	return <></>;
+	return <>test</>;
 };
 
 export default App;
